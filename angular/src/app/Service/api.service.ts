@@ -57,8 +57,8 @@ export class ApiService {
     return this.http.put<any>(environment.baseUrl+environment.updateCartUrl, map);
   }
 
-  deleteCartItem(bufdid: number, productName: string): Observable<any> {
-    return this.http.post<any>(environment.baseUrl + environment.deleteCartUrl + "/" + bufdid + "/" + productName,
+  deleteCartItem(cartid: number, productName: string): Observable<any> {
+    return this.http.post<any>(environment.baseUrl + environment.deleteCartUrl + "/" + cartid + "/" + productName,
       { headers: this.commonHeaders }
     );
   }

@@ -8,8 +8,8 @@ export class Order {
     price: string;
 }
 
-export class bufcart {
-    bufcartId: number;
+export class cart {
+    cartId: number;
     orderId: number;
     email: string;
     quantity: number;

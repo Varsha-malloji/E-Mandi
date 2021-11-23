@@ -1,5 +1,5 @@
 export interface Cart {
-    bufcartId: number;
+    cartId: number;
     orderId: number;
     quantity: number;
     price: number;

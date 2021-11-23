@@ -12,10 +12,10 @@
    justify-content: center;
 }
 
-.field-icon {
+.icon {
     float: right;
     left: -15px;
-    margin-top: -25px;
+    margin-top: -30px;
     position: relative;
     z-index: 2;
 }

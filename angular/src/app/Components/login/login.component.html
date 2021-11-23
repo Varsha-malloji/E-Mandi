@@ -15,7 +15,7 @@
                                 </div>
                                 <div class="form-group">
                                     <input class="form-control" [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-                                    <div>
+                                    <div class="icon">
                                         <i class="fa"
                                             [ngClass]="{
                                             'fa-eye-slash': !showPassword,
