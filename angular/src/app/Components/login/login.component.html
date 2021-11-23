@@ -21,7 +21,7 @@
                                             'fa-eye-slash': !showPassword,
                                             'fa-eye': showPassword
                                             }"
-                                            (click)="toggleFieldTextType()"
+                                            (click)="toggleShowPassword()"
                                         ></i>
                                     </div>
                                     <div *ngIf="submitted && f.password.errors" class="invalid-feedback">

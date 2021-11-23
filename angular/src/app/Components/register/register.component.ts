@@ -11,6 +11,10 @@ export class RegisterComponent implements OnInit {
 
   private registerForm: any;
   submitted = false;
+  showPassword = false;
+  showConfirmPassword = false;
+
+
 
   constructor(private apiService: ApiService,
               private router: Router,
@@ -78,7 +82,15 @@ export class RegisterComponent implements OnInit {
             matchingControl.setErrors(null);
         }
     }
-}
+  }
+
+  togglePassword() {
+    this.showPassword = !this.showPassword;
+  }
+
+  toggleConfirmPassword() {
+    this.showConfirmPassword = !this.showConfirmPassword;
+  }
 
 }
 

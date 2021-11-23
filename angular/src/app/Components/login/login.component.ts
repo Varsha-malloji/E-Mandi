@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  toggleFieldTextType() {
+  toggleShowPassword() {
     this.showPassword = !this.showPassword;
   }
 }

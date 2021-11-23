@@ -19,7 +19,16 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <input class="form-control" type="password" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <input class="form-control" [type]="showPassword ? 'text' : 'password'" formControlName="password" placeholder="Password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                                <div class="icon">
+                                    <i class="fa"
+                                        [ngClass]="{
+                                        'fa-eye-slash': !showPassword,
+                                        'fa-eye': showPassword
+                                        }"
+                                        (click)="togglePassword()"
+                                    ></i>
+                                </div>
                                 <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                                     <div *ngIf="f.password.errors.required">Password is required</div>
                                     <div *ngIf="f.password.errors.minlength">Password should be minimum 5 characters</div>
@@ -28,7 +37,16 @@
                         </div>
                         <div class="form-row">
                             <div class="form-group col">
-                                <input type="password" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                <input [type]="showConfirmPassword ? 'text' : 'password'" formControlName="confirmPassword" class="form-control" placeholder="Confirm Password" [ngClass]="{ 'is-invalid': submitted && f.confirmPassword.errors }" />
+                                <div class="icon">
+                                    <i class="fa"
+                                        [ngClass]="{
+                                        'fa-eye-slash': !showConfirmPassword,
+                                        'fa-eye': showConfirmPassword
+                                        }"
+                                        (click)="toggleConfirmPassword()"
+                                    ></i>
+                                </div>
                                 <div *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
                                     <div *ngIf="f.confirmPassword.errors.required">Confirm Password is required</div>
                                     <div *ngIf="f.confirmPassword.errors.mustMatch">Passwords must match</div>
