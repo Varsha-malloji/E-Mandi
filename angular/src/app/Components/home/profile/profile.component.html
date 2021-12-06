@@ -21,8 +21,8 @@
             </div>
         </div>
 </div>-->
-    <!--<form [formGroup]="editProfile" (ngSubmit)="addProd()" *ngIf="showAdd">-->
-    <form [formGroup]="editProfile">
+    <form [formGroup]="userProfile" (ngSubmit)="editProfile()">
+    <!--<form [formGroup]="editProfile">-->
         <div class="form-group">
             <label>UserName</label>
             <input type="text" formControlName="username" class="form-control" placeholder="username" value={{userlist.username}} />
@@ -45,7 +45,7 @@
 
         <div class="form-group">
             <label>Status</label>
-            <input disabled="true" class="form-control" formControlName="status" placeholder="status" value="Active" />
+            <input class="form-control" formControlName="status" value="Active" disabled="true"/>
         </div>
 
         <input type="submit" class="btn btn-secondary align-right" value="Save Changes"><br><br>

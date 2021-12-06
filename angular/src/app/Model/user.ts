@@ -5,5 +5,5 @@ export interface User {
   mobile: string;
   password: string;
   role: string;
-  active: string;
+  status: string;
 }

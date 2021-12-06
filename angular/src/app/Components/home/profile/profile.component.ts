@@ -11,11 +11,13 @@ import { ApiService } from 'src/app/Service/api.service';
 })
 export class ProfileComponent implements OnInit {
 
-  private editProfile: any;
+  private userProfile: any;
   private auth: string;
   userlist: User;
   flag = true;
   totalCount: number = 0;
+  edited = false;
+
   constructor(private apiService: ApiService,
     private router: Router,
     private formBuilder: FormBuilder) {
@@ -34,7 +36,7 @@ export class ProfileComponent implements OnInit {
   }
 
   createForm() {
-    this.editProfile = this.formBuilder.group({
+    this.userProfile = this.formBuilder.group({
       username: '',
       email: '',
       password: '',
@@ -42,6 +44,10 @@ export class ProfileComponent implements OnInit {
       status: '',
       role: ''
     });
+  }
+
+  editProfile() {
+    this.edited = true;
   }
 
 

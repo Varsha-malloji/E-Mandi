@@ -1,5 +1,6 @@
 <app-navigation></app-navigation>
-<div class="container">
+
+<div *ngIf="cartlist?.length > 0" class="container">
   <br>
   <a routerLink="/home" class="btn btn-primary"><i class="fa fa-angle-left"></i> Continue shopping</a><br>
   <table id="cart" class="table table-hover table-condensed ">
@@ -36,13 +37,16 @@
       </td>
     </tr>
   </table>
-
   <div class="row">
     <div class="col-9">Cart Total : {{totalSum | currency:'INR'}}</div>
     <div class="offset-1 col-2"><button type="button" class="btn btn-primary align-right" (click)="placeOrder()">Place Order <i
       class="fa fa-angle-right"></i></button></div>
   </div>
+</div>
 
-  
-
+<div class="emptyCart">
+  <div *ngIf="cartlist?.length == 0">
+    <h1>Cart is Empty!</h1><br><br><br>
+    <a routerLink="/home" class="btn btn-primary"><i class="fa fa-angle-left"></i> Start shopping</a><br>
+  </div>
 </div>
